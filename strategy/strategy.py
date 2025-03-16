@@ -32,14 +32,6 @@ class Strategy:
         if is_sunk:
             self.mark_sunk_ship(x, y)
 
-    def get_neighbors(self, x: int, y: int) -> list[tuple[int, int]]:
-        neighbors = []
-        for dx, dy in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
-            nx, ny = x + dx, y + dy
-            if 0 <= nx < self.cols and 0 <= ny < self.rows and self.enemy_board[ny][nx] == '?':
-                neighbors.append((nx, ny))
-        return neighbors
-
     def mark_sunk_ship(self, x: int, y: int) -> None:
         for ship_id in self.ships_dict:
             if self.ships_dict[ship_id] > 0:

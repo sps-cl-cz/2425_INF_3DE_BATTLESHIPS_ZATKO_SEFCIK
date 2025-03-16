@@ -79,11 +79,3 @@ class BoardSetup:
     def print_board(self) -> None:
         for row in self.board:
             print(" ".join(str(cell) for cell in row))
-
-if __name__ == "__main__":
-    rows, cols = 10, 10
-    ships_dict = {1: 1, 2: 1, 3: 1, 4: 1, 5: 1, 6: 1, 7: 1}
-    board = BoardSetup(rows, cols, ships_dict)
-    board.place_ships()
-    board.print_board()
-    print(board.board_stats())
